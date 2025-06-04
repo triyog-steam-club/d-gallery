@@ -120,3 +120,9 @@
     @apply bg-background text-foreground;
   }
 }
+.masonry-column {
+  background-clip: padding-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Adjust gap between cards */
+}
