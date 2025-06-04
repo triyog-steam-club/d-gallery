@@ -37,6 +37,7 @@ const PhotoGalleryOverview = () => {
       setLoading(true);
       try {
         const data = await getCollections();
+        console.log("this is data", data);
         setCollections(data);
       } catch (error) {
         console.error("Error fetching collections:", error);
@@ -71,7 +72,6 @@ const PhotoGalleryOverview = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-black dark:to-gray-900">
-      {/* Mobile Header */}
       <div className="lg:hidden bg-white/80 dark:bg-black/80 backdrop-blur-md border-b dark:border-gray-700 sticky top-0 z-40">
         <div className="px-4 py-3">
           <div className="flex items-center justify-between">
@@ -89,7 +89,7 @@ const PhotoGalleryOverview = () => {
                 <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               </Button>
 
-              <Sheet>
+              {/* <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="outline" size="icon">
                     <Menu className="h-4 w-4" />
@@ -166,7 +166,7 @@ const PhotoGalleryOverview = () => {
                     </div>
                   </div>
                 </SheetContent>
-              </Sheet>
+              </Sheet> */}
             </div>
           </div>
 
@@ -287,16 +287,15 @@ const PhotoGalleryOverview = () => {
         </div>
       </div>
 
-      {/* Gallery Overview */}
       <div className="max-w-7xl mx-auto px-4 py-8">
         {loading ? (
           <div className="flex justify-center items-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-500"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#e85ba0]"></div>
           </div>
         ) : viewMode === "grid" ? (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
-            {filteredCollections.map((collection) => (
-              <Link key={collection.id} href={`/collection/${collection.id}`}>
+            {filteredCollections.map((collection, x) => (
+              <Link key={x} href={`/collection/${x}`}>
                 <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-gray-50 dark:bg-gray-800 cursor-pointer h-full flex flex-col">
                   <div className="relative">
                     {/* Preview Image with consistent aspect ratio */}
@@ -310,7 +309,7 @@ const PhotoGalleryOverview = () => {
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        priority={collection.id <= 3}
+                        priority={x <= 3}
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
 
@@ -325,16 +324,16 @@ const PhotoGalleryOverview = () => {
                       </div>
 
                       {/* Grade Badge */}
-                      <div className="absolute top-4 right-4">
+                      {/* <div className="absolute top-4 right-4">
                         <Badge
                           className={`${getGradeColor(
-                            collection.grade
+                            // collection.grade
                           )} text-white border-0`}
                         >
                           <GraduationCap className="w-3 h-3 mr-1" />
                           Grade {collection.grade}
                         </Badge>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
 
@@ -344,22 +343,22 @@ const PhotoGalleryOverview = () => {
                         <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 group-hover:text-[#f272ad] dark:group-hover:text-[#f272ad] transition-colors line-clamp-2">
                           {collection.title}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed line-clamp-3">
+                        {/* <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed line-clamp-3">
                           {collection.caption}
-                        </p>
+                        </p> */}
                       </div>
 
                       <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                         <Camera className="w-4 h-4 flex-shrink-0" />
-                        <span className="truncate">
+                        {/* <span className="truncate">
                           {collection.photographer.length} photographer
                           {collection.photographer.length > 1 ? "s" : ""}
-                        </span>
+                        </span> */}
                       </div>
 
                       <div className="flex items-center justify-between pt-2">
                         <div className="flex items-center gap-2">
-                          <Badge
+                          {/* <Badge
                             variant="secondary"
                             className="rounded-full text-xs"
                           >
@@ -367,12 +366,12 @@ const PhotoGalleryOverview = () => {
                           </Badge>
                           <span className="text-xs text-gray-500 dark:text-gray-400">
                             {collection.date}
-                          </span>
+                          </span> */}
                         </div>
 
                         <div className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
                           <Heart className="w-4 h-4" />
-                          <span>{collection.likes}</span>
+                          {/* <span>{collection.likes}</span> */}
                         </div>
                       </div>
                     </div>
@@ -383,8 +382,8 @@ const PhotoGalleryOverview = () => {
           </div>
         ) : (
           <div className="space-y-4">
-            {filteredCollections.map((collection) => (
-              <Link key={collection.id} href={`/collection/${collection.id}`}>
+            {filteredCollections.map((collection, x) => (
+              <Link key={x} href={`/collection/${x}`}>
                 <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gray-50 dark:bg-gray-800 cursor-pointer">
                   <div className="flex flex-col sm:flex-row">
                     <div className="sm:w-48 aspect-[4/3] sm:aspect-auto sm:h-32 relative flex-shrink-0">
@@ -405,30 +404,30 @@ const PhotoGalleryOverview = () => {
                           <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 truncate">
                             {collection.title}
                           </h3>
-                          <p className="text-gray-600 dark:text-gray-300 text-sm mb-2 sm:mb-3 line-clamp-2">
+                          {/* <p className="text-gray-600 dark:text-gray-300 text-sm mb-2 sm:mb-3 line-clamp-2">
                             {collection.caption}
-                          </p>
+                          </p> */}
                         </div>
-                        <Badge
+                        {/* <Badge
                           className={`${getGradeColor(
                             collection.grade
                           )} text-white border-0 ml-4 flex-shrink-0`}
                         >
                           <GraduationCap className="w-3 h-3 mr-1" />
                           Grade {collection.grade}
-                        </Badge>
+                        </Badge> */}
                       </div>
 
                       <div className="flex flex-wrap items-center justify-between text-sm text-gray-500 dark:text-gray-400 gap-y-2">
                         <div className="flex flex-wrap items-center gap-2 sm:gap-4 min-w-0 flex-1">
                           <div className="flex items-center gap-1">
                             <Camera className="w-4 h-4 flex-shrink-0" />
-                            <span className="truncate">
+                            {/* <span className="truncate">
                               {collection.photographer.length} photographer
                               {collection.photographer.length > 1 ? "s" : ""}
-                            </span>
+                            </span> */}
                           </div>
-                          <Badge
+                          {/* <Badge
                             variant="secondary"
                             className="rounded-full text-xs flex-shrink-0"
                           >
@@ -436,12 +435,12 @@ const PhotoGalleryOverview = () => {
                           </Badge>
                           <span className="text-xs flex-shrink-0">
                             {collection.date}
-                          </span>
+                          </span> */}
                         </div>
 
                         <div className="flex items-center gap-1 flex-shrink-0">
                           <Heart className="w-4 h-4" />
-                          <span>{collection.likes}</span>
+                          {/* <span>{collection.likes}</span> */}
                         </div>
                       </div>
                     </CardContent>
