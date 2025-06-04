@@ -202,7 +202,7 @@ const PhotoGallery = () => {
                       <DialogTrigger asChild>
                         <div className="col-span-2 row-span-2 relative overflow-hidden rounded-xl cursor-pointer group/image">
                           <Image
-                            src={collection.images[0] || "/"}
+                            src={collection.images[0] || "/placeholder.svg"}
                             alt=""
                             fill
                             className="object-cover transition-transform duration-500 group-hover/image:scale-110"

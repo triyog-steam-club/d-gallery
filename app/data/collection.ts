@@ -1,0 +1,92 @@
+export const collections = [
+  {
+    id: 1,
+    title: "Rainforest Expedition",
+    photographers: ["John D.", "Sara T.", "Mike R."],
+    caption:
+      "A glimpse into jungle life — from explorers to wildlife. This collection showcases the incredible biodiversity and natural beauty of tropical rainforests around the world.",
+    grade: 9,
+    category: "Nature",
+    date: "2024-03-15",
+    likes: 234,
+    images: [
+      "https://storage.googleapis.com/a1aa/image/6d0350ab-05bb-4acb-1c1d-0dcecb887b36.jpg",
+      "https://storage.googleapis.com/a1aa/image/2832d8bd-066c-49bb-b02e-ad65fd66b76a.jpg",
+      "https://storage.googleapis.com/a1aa/image/6ece2fbb-2014-4f7a-019b-0807895fb2a2.jpg",
+      "https://storage.googleapis.com/a1aa/image/97fc85ad-fb31-4625-a494-4c2d509b75ed.jpg",
+      "https://storage.googleapis.com/a1aa/image/ff7490fe-43ce-4991-c390-fc3f0299589d.jpg",
+    ],
+  },
+  {
+    id: 2,
+    title: "Urban Architecture",
+    photographers: ["Alex M.", "Emma K."],
+    caption:
+      "Modern cityscapes and architectural marvels captured in stunning detail. Exploring the intersection of design, functionality, and urban living.",
+    grade: 8,
+    category: "Architecture",
+    date: "2024-03-10",
+    likes: 189,
+    images: [
+      "https://storage.googleapis.com/a1aa/image/6d0350ab-05bb-4acb-1c1d-0dcecb887b36.jpg",
+      "https://storage.googleapis.com/a1aa/image/2832d8bd-066c-49bb-b02e-ad65fd66b76a.jpg",
+      "https://storage.googleapis.com/a1aa/image/6ece2fbb-2014-4f7a-019b-0807895fb2a2.jpg",
+      "https://storage.googleapis.com/a1aa/image/97fc85ad-fb31-4625-a494-4c2d509b75ed.jpg",
+      "https://storage.googleapis.com/a1aa/image/ff7490fe-43ce-4991-c390-fc3f0299589d.jpg",
+    ],
+  },
+  {
+    id: 3,
+    title: "Ocean Depths",
+    photographers: ["David L.", "Maria S.", "Tom W."],
+    caption:
+      "Underwater photography showcasing marine life in its natural habitat. A journey into the mysterious and beautiful world beneath the waves.",
+    grade: 10,
+    category: "Marine",
+    date: "2024-03-05",
+    likes: 312,
+    images: [
+      "https://storage.googleapis.com/a1aa/image/6d0350ab-05bb-4acb-1c1d-0dcecb887b36.jpg",
+      "https://storage.googleapis.com/a1aa/image/2832d8bd-066c-49bb-b02e-ad65fd66b76a.jpg",
+      "https://storage.googleapis.com/a1aa/image/6ece2fbb-2014-4f7a-019b-0807895fb2a2.jpg",
+      "https://storage.googleapis.com/a1aa/image/97fc85ad-fb31-4625-a494-4c2d509b75ed.jpg",
+      "https://storage.googleapis.com/a1aa/image/ff7490fe-43ce-4991-c390-fc3f0299589d.jpg",
+    ],
+  },
+  {
+    id: 4,
+    title: "Mountain Peaks",
+    photographers: ["Lisa R.", "James H."],
+    caption:
+      "Breathtaking views from the world's highest peaks and alpine landscapes. Capturing the raw beauty and majesty of mountain environments.",
+    grade: 7,
+    category: "Landscape",
+    date: "2024-02-28",
+    likes: 267,
+    images: [
+      "https://storage.googleapis.com/a1aa/image/6d0350ab-05bb-4acb-1c1d-0dcecb887b36.jpg",
+      "https://storage.googleapis.com/a1aa/image/2832d8bd-066c-49bb-b02e-ad65fd66b76a.jpg",
+      "https://storage.googleapis.com/a1aa/image/6ece2fbb-2014-4f7a-019b-0807895fb2a2.jpg",
+      "https://storage.googleapis.com/a1aa/image/97fc85ad-fb31-4625-a494-4c2d509b75ed.jpg",
+      "https://storage.googleapis.com/a1aa/image/ff7490fe-43ce-4991-c390-fc3f0299589d.jpg",
+    ],
+  },
+  {
+    id: 5,
+    title: "Street Photography",
+    photographers: ["Carlos R.", "Nina P."],
+    caption:
+      "Candid moments and urban life captured through the lens. Stories of everyday people and the rhythm of city life.",
+    grade: 6,
+    category: "Street",
+    date: "2024-02-20",
+    likes: 156,
+    images: [
+      "https://storage.googleapis.com/a1aa/image/6d0350ab-05bb-4acb-1c1d-0dcecb887b36.jpg",
+      "https://storage.googleapis.com/a1aa/image/2832d8bd-066c-49bb-b02e-ad65fd66b76a.jpg",
+      "https://storage.googleapis.com/a1aa/image/6ece2fbb-2014-4f7a-019b-0807895fb2a2.jpg",
+      "https://storage.googleapis.com/a1aa/image/97fc85ad-fb31-4625-a494-4c2d509b75ed.jpg",
+      "https://storage.googleapis.com/a1aa/image/ff7490fe-43ce-4991-c390-fc3f0299589d.jpg",
+    ],
+  },
+]

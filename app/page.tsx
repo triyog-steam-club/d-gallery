@@ -1,11 +1,5 @@
-import PhotoGallery from "@/app/components/PhotoGallery";
+import PhotoGalleryOverview from "@/app/components/PhotoGalleryOverview";
 
-const App = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <PhotoGallery />
-    </div>
-  );
-};
-
-export default App;
+export default function HomePage() {
+  return <PhotoGalleryOverview />;
+}
